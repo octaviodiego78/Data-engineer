@@ -16,11 +16,10 @@ def add_(x: int, y:int) -> int:  #proposition
 
 
 #Functional programming
-from typing import Callable
-
+from typing import Callable, List, TypeVar, Iterable
+import time
 x = ...
 
 def sort(method: Callable): #same as using @abstract decorator that asked you to have sort method from parent class in all son classes
     method(x)
-
 
