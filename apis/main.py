@@ -1,6 +1,13 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
+
+class Profile(BaseModel):
+    name: str
+    user: str
+
+
 
 @app.get("/")
 def hello_world():
@@ -19,10 +26,10 @@ def credit_score(age: int,working: bool, income: float):
 
 
 @app.post("/post_your_profile")
-def post_your_profile(name: str, user:str):
+def post_your_profile(profile: Profile):
     return {
-        "name": name,
-        "user": user
+        "name": profile.name,
+        "user": profile.user
         }
 
 
