@@ -15,7 +15,7 @@ async def connect():
             else:
                 file_path = f'./data/users/{uuid.uuid4()}.json'
                 with open(file_path, 'w+') as f:
-                    json.dumps(users, f)
+                    json.dump(users, f)
                 users = []
 
 
